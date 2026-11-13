@@ -10,11 +10,9 @@
   <a href="https://github.com/probnode/probnode-rs/actions/workflows/ci.yml"><img src="https://github.com/probnode/probnode-rs/actions/workflows/ci.yml/badge.svg?branch=main" alt="CI"></a>
   <a href="https://github.com/probnode/probnode-rs/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-blue.svg" alt="License: Apache-2.0"></a>
   <a href="https://github.com/probnode/probnode-rs/blob/main/Cargo.toml"><img src="https://img.shields.io/badge/MSRV-1.85-blue.svg" alt="MSRV 1.85"></a>
-  <!-- enable on first release:
   <a href="https://crates.io/crates/probnode"><img src="https://img.shields.io/crates/v/probnode.svg" alt="crates.io"></a>
   <a href="https://docs.rs/probnode"><img src="https://img.shields.io/docsrs/probnode" alt="docs.rs"></a>
   <a href="https://crates.io/crates/probnode"><img src="https://img.shields.io/crates/d/probnode.svg" alt="Downloads"></a>
-  -->
 </p>
 
 ## Overview
