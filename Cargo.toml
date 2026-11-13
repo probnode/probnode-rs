@@ -1,0 +1,12 @@
+[workspace]
+resolver = "2"
+members = ["probnode"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+license = "Apache-2.0"
+authors = ["ProbNode <hello@probnode.com>"]
+repository = "https://github.com/probnode/probnode-rs"
+homepage = "https://probnode.com"

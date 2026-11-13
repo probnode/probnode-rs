@@ -1,0 +1,48 @@
+[package]
+name = "probnode"
+description = "Official Rust client for the ProbNode API: prediction-market order books, trades and bars as sha256-checked files"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+homepage.workspace = true
+documentation = "https://docs.rs/probnode"
+readme = "../README.md"
+keywords = ["market-data", "order-book", "polymarket", "prediction-markets", "api-client"]
+categories = ["api-bindings", "finance", "web-programming::http-client"]
+include = ["src/**/*.rs", "examples/**/*.rs", "Cargo.toml", "LICENSE"]
+
+[features]
+default = []
+# A synchronous client, `probnode::blocking::Client`, with the same methods.
+blocking = ["tokio/rt"]
+# Open a downloaded Probe file (the `book_full` dataset's `evmin` hours) with `probe-format`.
+probe = ["dep:probe-format"]
+
+[dependencies]
+reqwest = { version = "0.12", default-features = false, features = ["json", "stream", "rustls-tls"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+futures-util = { version = "0.3", default-features = false, features = ["std"] }
+tokio = { version = "1.38", default-features = false, features = ["fs", "io-util"] }
+bytes = "1"
+# Until probe-format is on crates.io, cargo takes it from its repository; `cargo publish` uses the
+# version, so this crate is published only after probe-format 0.1 is.
+probe-format = { version = "0.1", git = "https://github.com/probnode/probe", default-features = false, optional = true }
+
+[dev-dependencies]
+tokio = { version = "1.38", features = ["macros", "rt-multi-thread"] }
+wiremock = "0.6"
+tempfile = "3"
+
+[[example]]
+name = "datasets"
+
+[[example]]
+name = "export_book"
+
+[package.metadata.docs.rs]
+all-features = true
