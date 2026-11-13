@@ -4,8 +4,8 @@ name: release-crates
 # publishing (OIDC): configure the trusted publisher on crates.io for repository
 # probnode/probnode-rs, workflow release-crates.yml, environment crates-io. No token is stored.
 #
-# The `probe` feature depends on probe-format 0.1; publish probe-format first, or `cargo publish`
-# cannot resolve it.
+# Guarded: the publish job runs only when the repository variable PUBLISH_ENABLED is `true`
+# (Settings > Secrets and variables > Actions > Variables). Until then a tag run is skipped, not red.
 
 on:
   push:
@@ -17,7 +17,7 @@ permissions:
 
 jobs:
   publish:
-    if: github.repository == 'probnode/probnode-rs'
+    if: github.repository == 'probnode/probnode-rs' && vars.PUBLISH_ENABLED == 'true'
     runs-on: ubuntu-latest
     environment: crates-io
     permissions:

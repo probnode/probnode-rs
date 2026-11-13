@@ -29,9 +29,7 @@ sha2 = "0.10"
 futures-util = { version = "0.3", default-features = false, features = ["std"] }
 tokio = { version = "1.38", default-features = false, features = ["fs", "io-util"] }
 bytes = "1"
-# Until probe-format is on crates.io, cargo takes it from its repository; `cargo publish` uses the
-# version, so this crate is published only after probe-format 0.1 is.
-probe-format = { version = "0.1", git = "https://github.com/probnode/probe", default-features = false, optional = true }
+probe-format = { version = "0.1", default-features = false, optional = true }
 
 [dev-dependencies]
 tokio = { version = "1.38", features = ["macros", "rt-multi-thread"] }

@@ -36,7 +36,7 @@ CI runs the same on Linux, macOS and Windows.
 
 - One topic per pull request, with a test that fails without the change.
 - Keep public items documented (`#![warn(missing_docs)]`).
-- Add a line to `CHANGELOG.md` under the unreleased version.
+- Add a line to `CHANGELOG.md` under `[Unreleased]`.
 
 ## Code of conduct
 
