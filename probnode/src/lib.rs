@@ -57,6 +57,7 @@ mod client;
 pub mod config;
 mod error;
 pub mod models;
+pub mod stream;
 
 #[cfg(feature = "blocking")]
 pub mod blocking;
