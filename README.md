@@ -43,16 +43,6 @@ The same API has official clients for [Python](https://github.com/probnode/probn
 
 ## Installation
 
-The first crates.io release of `probnode` is on the way. Until then, from this repository:
-
-```toml
-[dependencies]
-probnode = { git = "https://github.com/probnode/probnode-rs", tag = "v0.1.0" }
-tokio = { version = "1", features = ["macros", "rt-multi-thread"] }   # the client is async
-```
-
-Once released:
-
 ```sh
 cargo add probnode
 cargo add tokio --features macros,rt-multi-thread

@@ -7,6 +7,15 @@ the API.
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-11-22
+
+### Added
+
+- `probnode::stream`: the Live API (`wss://live.probnode.com/v2/live`). `subscribe_message` builds
+  the subscribe message (markets, channels, format `json` or `probe`, blocks); `decode` reads a
+  binary Probe frame into `Record`s (book, trade, the probnode record with each metric's value
+  and deviation). No new dependencies: bring your own WebSocket client.
+
 ## [0.1.0] - 2026-11-13
 
 First release of the official Rust client.
