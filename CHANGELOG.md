@@ -7,6 +7,12 @@ the API.
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-11-22
+
+### Added
+
+- `stream::unsubscribe_message`: stop watching markets.
+
 ## [0.2.0] - 2026-11-22
 
 ### Added

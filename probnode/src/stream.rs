@@ -42,6 +42,13 @@ pub fn subscribe_message(
     m.to_string()
 }
 
+/// The unsubscribe message: stop watching markets (every channel of them). Keep your own list of
+/// active subscriptions; after a reconnect, send their [`subscribe_message`]s again (each starts
+/// with a fresh snapshot).
+pub fn unsubscribe_message(markets: &[&str]) -> String {
+    json!({"op": "unsub", "markets": markets}).to_string()
+}
+
 /// Record types.
 pub mod rtype {
     /// A book level change.
@@ -329,6 +336,13 @@ mod tests {
     fn refuses_a_truncated_frame() {
         let f = frame();
         assert!(decode(&f[..f.len() - 8]).is_err());
+    }
+
+    #[test]
+    fn unsubscribe() {
+        let m: serde_json::Value =
+            serde_json::from_str(&unsubscribe_message(&["m1", "m2"])).unwrap();
+        assert_eq!(m, json!({"op": "unsub", "markets": ["m1", "m2"]}));
     }
 
     #[test]
