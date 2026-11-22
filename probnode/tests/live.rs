@@ -36,7 +36,8 @@ async fn live_datasets() {
         .iter()
         .find(|d| d.code == "book_full")
         .expect("book_full listed");
-    assert!(full.formats.iter().any(|f| f == "evmin"));
+    // The full book's format code is `probe` since 2026-11-21 (`evmin` before).
+    assert!(full.formats.iter().any(|f| f == "probe" || f == "evmin"));
     assert!(full.market_day_formats.iter().any(|f| f == "parquet"));
 }
 
