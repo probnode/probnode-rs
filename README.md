@@ -222,13 +222,26 @@ cargo run --example datasets                              # no key needed
 cargo run --example export_book -- will-x-happen 2026-11-12 trades csv
 ```
 
+## Live API
+
+`probnode::stream` speaks the [Live API](https://probnode.com/docs/live-api?lang=rust)
+(`wss://live.probnode.com/v2/live`): every Polymarket book event and trade of the markets you
+subscribe, as it happens, each with the probnode object. It builds the messages
+(`subscribe_message`, `unsubscribe_message`) and decodes binary Probe frames (`decode`); the
+connection is your own WebSocket client - the docs use tokio-tungstenite with rustls. Every Rust
+example on the site is compiled in CI.
+
+- Live API: [probnode.com/docs/live-api](https://probnode.com/docs/live-api?lang=rust)
+- Client reference: [probnode.com/docs/live-api/client](https://probnode.com/docs/live-api/client?lang=rust)
+- Release notes: [probnode.com/docs/live-api/release-notes](https://probnode.com/docs/live-api/release-notes)
+
 ## Documentation
 
 - ProbNode documentation: [probnode.com/docs](https://probnode.com/docs)
+- Live API: [probnode.com/docs/live-api](https://probnode.com/docs/live-api?lang=rust)
 - Schemas, columns and units: [probnode.com/docs/schemas](https://probnode.com/docs/schemas)
 - API reference (OpenAPI 3.1): [probnode.com/openapi.json](https://probnode.com/openapi.json)
-- Crate documentation: `cargo doc -p probnode --all-features --open` (on docs.rs with the first
-  release)
+- Crate documentation: [docs.rs/probnode](https://docs.rs/probnode)
 
 ## Versioning and compatibility
 

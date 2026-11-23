@@ -7,6 +7,13 @@ the API.
 
 ## [Unreleased]
 
+## [0.2.2] - 2026-11-23
+
+### Changed
+
+- README: a Live API section and links to the Live API docs, client reference and release notes;
+  docs.rs as the crate documentation. No code changes.
+
 ## [0.2.1] - 2026-11-22
 
 ### Added
